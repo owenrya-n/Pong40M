@@ -52,11 +52,10 @@ void startupanimation()
     digitalWrite(CATHODE_PINS[i], HIGH);
     delay(50);
   }
-   for (int i = 0; i < 8; i++)
+  for (int i = 0; i < 8; i++)
   {
     digitalWrite(ANODE_PINS[i], HIGH);
     digitalWrite(CATHODE_PINS[0], HIGH);
     delay(50);
   }
-  
 }

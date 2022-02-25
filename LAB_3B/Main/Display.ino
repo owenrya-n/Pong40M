@@ -32,47 +32,47 @@ void setup()
 void loop()
 {
 
-    if (millis() - freq >= timescale)
+    if (millis() - freq >= timescale) //animation time controller
     {
         freq = millis();
-        contactstate = contact(prev[0], prev[1], d1, d2, settings);
-        prev[0] = iteratex(prev[0], prev[1], dx, dy, 1);
+        contactstate = contact(prev[0], prev[1], d1, d2, settings); //checks if contact with wall or paddles
+        prev[0] = iteratex(prev[0], prev[1], dx, dy, 1); //update pos of ball
         prev[1] = iteratey(prev[0], prev[1], dx, dy, 1);
-        if (contactstate == 3)
+        if (contactstate == 3) //if goal p1
         {
-            goalanimation(3, scorep1, scorep2);
+            goalanimation(3, scorep1, scorep2); //display score
             delay(1000);
-            prev[1] = rand() % 2 + 3;
+            prev[1] = rand() % 2 + 3; //put ball somewhere random
             prev[0] = rand() % 7;
             dx = -dx;
             dy = -dy;
-            timef++;
-            scorep2++;
+            timef++; //for diagnostic stuff
+            scorep2++; //increase player 2 score
         }
         if (contactstate == 4)
-        {
-            goalanimation(4, scorep1, scorep2);
+        { //if goal p2
+            goalanimation(4, scorep1, scorep2); //
             delay(1000);
-            prev[1] = rand() % 2 + 3;
+            prev[1] = rand() % 2 + 3; //put ball somewhere random
             prev[0] = rand() % 7;
             dx = -dx;
             dy = -dy;
             timef++;
-            scorep1++;
+            scorep1++; //increase player 2 score
         }
         if ((prev[0] >= 7 || prev[0] <= 0) && !(contactstate == 3 || contactstate == 4))
         {
-            dx = -dx;
+            dx = -dx; //wall bounce
         }
         if (prev[1] >= 7 || prev[1] <= 0)
         {
-            dy = -dy;
+            dy = -dy; //wall bounce
         }
-        d1 = ping(echoPin2, trigPin2, 2);
+        d1 = ping(echoPin2, trigPin2, 2); //sensor readout
         d2 = ping(echoPin1, trigPin1, 2);
     }
 
-    ramp(d1, 0, sclock, settings);
+    ramp(d1, 0, sclock, settings); //paddle multiplexing
     ramp(d2, 7, sclock, settings);
-    display(prev, clock);
+    display(prev, clock); //ball multiplexing
 }
