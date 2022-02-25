@@ -12,8 +12,8 @@ const byte settings[8] = {5, 9, 13, 17, 21, 25, 29, 33}; //reference values for 
 //const byte settings[8] = {7, 10, 13, 16, 19, 22, 25, 28};
 int d1;          //distance read from sensor 1
 int d2;          //distance read from sensor 2
-int clock = 300; //refresh rate for sensor
-int sclock = 300;
+int clock = 300; //refresh rate for display
+int sclock = 300; //refresh rate for sensor
 int prev[2] = {4, 1};            //initial pos
 unsigned long timescale = 130UL; //fps
 unsigned long freq;              //fps multiplier
@@ -41,7 +41,7 @@ void loop()
         if (contactstate == 3) //if goal p1
         {
             goalanimation(3, scorep1, scorep2); //display score
-            delay(1000);
+            delay(1000); //leave animation playing for 1s
             prev[1] = rand() % 2 + 3; //put ball somewhere random
             prev[0] = rand() % 7;
             dx = -dx;
