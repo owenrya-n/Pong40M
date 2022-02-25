@@ -4,5 +4,6 @@
 
 void setPins();
 void setBaud();
+void startupanimation();
 
 #endif
