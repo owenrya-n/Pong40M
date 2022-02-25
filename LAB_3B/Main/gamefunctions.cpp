@@ -3,7 +3,7 @@ const byte ANODE_PINS[8] = {6, 7, 8, 9, 10, 11, 12, 13};
 const byte CATHODE_PINS[8] = {A3, A2, A1, A0, 5, 4, 3, 2};
 
 void goalanimation(int player, int player1score, int player2score)
-//lights up entire goal when opponent scores
+//lights goal with player score
 //dependent upon contactstate
 {
     if (player == 4)
@@ -27,7 +27,6 @@ void goalanimation(int player, int player1score, int player2score)
         }
         else
         {
-            player1score = 0;
             for (int i = 0; i < 8; i++)
             {
                 digitalWrite(ANODE_PINS[7], LOW);
@@ -43,7 +42,7 @@ void goalanimation(int player, int player1score, int player2score)
     }
     if (player == 3)
     {
-        if (player1score <= 8)
+        if (player2score <= 8)
         {
 
             for (int i = 0; i < player2score; i++)
@@ -62,7 +61,6 @@ void goalanimation(int player, int player1score, int player2score)
         }
         else
         {
-            player2score = 0;
             for (int i = 0; i < 8; i++)
             {
                 digitalWrite(ANODE_PINS[7], LOW);

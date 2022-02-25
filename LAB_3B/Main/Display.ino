@@ -15,14 +15,14 @@ int d2;          //distance read from sensor 2
 int clock = 300; //refresh rate for sensor
 int sclock = 300;
 int prev[2] = {4, 1};            //initial pos
-unsigned long timescale = 100UL; //fps
+unsigned long timescale = 130UL; //fps
 unsigned long freq;              //fps multiplier
 int dx = 1;                      //velocity wrt x
 int dy = 1;                      //velocity wrt y
 int timef = 0;                   //animation speed multiplier
 int contactstate;                //paddle collision detector
-int scorep1 = 3;                 // score player 1
-int scorep2 = 4;                 //score player 2
+int scorep1 = 1;                 // score player 1
+int scorep2 = 1;                 //score player 2
 void setup()
 {
     setPins();
