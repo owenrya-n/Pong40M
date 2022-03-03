@@ -1,3 +1,4 @@
+// header file containing prototype methods which are identical of those in gmplexer.cpp
 #ifndef GMPLEXER_H
 #define GMPLEXER_H
 #include <Arduino.h>

@@ -1,3 +1,4 @@
+// header file containing prototype methods which are identical of those in gamefunctions.cpp
 #ifndef GAMEFUNCTIONS_H
 #define GAMEFUNCTIONS_H
 #include <Arduino.h>
