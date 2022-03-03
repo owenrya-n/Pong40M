@@ -1,3 +1,4 @@
+// header file containing prototype methods which are identical of those in rmplexer.cpp
 #ifndef RMPLEXER_H
 #define RMPLEXER_H
 #include <Arduino.h>
